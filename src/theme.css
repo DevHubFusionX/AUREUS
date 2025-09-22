@@ -1,0 +1,94 @@
+/* Default dark mode styles */
+.bg-white {
+  background-color: rgb(31 41 55);
+}
+
+.bg-gray-50 {
+  background-color: rgb(17 24 39);
+}
+
+.bg-gray-100 {
+  background-color: rgb(55 65 81);
+}
+
+.bg-gray-800 {
+  background-color: rgb(31 41 55);
+}
+
+.bg-gray-900 {
+  background-color: rgb(17 24 39);
+}
+
+.text-gray-900 {
+  color: rgb(229 231 235);
+}
+
+.text-gray-600 {
+  color: rgb(156 163 175);
+}
+
+.text-gray-500 {
+  color: rgb(107 114 128);
+}
+
+.border-gray-200 {
+  border-color: rgb(75 85 99);
+}
+
+.border-gray-300 {
+  border-color: rgb(107 114 128);
+}
+
+.border-gray-700 {
+  border-color: rgb(75 85 99);
+}
+
+/* Light mode overrides */
+body.light {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+.light .bg-white {
+  background-color: #ffffff;
+}
+
+.light .bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.light .bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.light .text-gray-900 {
+  color: #111827;
+}
+
+.light .text-gray-600 {
+  color: #4b5563;
+}
+
+.light .text-gray-500 {
+  color: #6b7280;
+}
+
+.light .border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+.light .border-gray-700 {
+  border-color: #374151;
+}
+
+.light .hover\:bg-gray-50:hover {
+  background-color: #f9fafb;
+}
+
+.light .hover\:bg-gray-100:hover {
+  background-color: #f3f4f6;
+}
+
+.light .hover\:bg-gray-700:hover {
+  background-color: #f3f4f6;
+}
