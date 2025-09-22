@@ -68,35 +68,35 @@ export default function Settings() {
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Wallet Profile</h2>
                   
                   <div className="space-y-6">
-                    <div className="flex items-center space-x-6">
-                      <div className="w-20 h-20 bg-[#D4AF37] rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#D4AF37] rounded-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold">
                         🦊
                       </div>
-                      <div>
-                        <div className="text-lg font-semibold text-gray-900 dark:text-white">MetaMask Wallet</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-300 font-mono">0x742d35Cc6634C0532925a3b8D4C0532925a3b8D4</div>
+                      <div className="text-center sm:text-left">
+                        <div className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">MetaMask Wallet</div>
+                        <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 font-mono break-all">0x742d35Cc6634C0532925a3b8D4C0532925a3b8D4</div>
                       </div>
                     </div>
 
-                    <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                      <h3 className="font-medium text-gray-900 dark:text-white mb-2">Wallet Information</h3>
-                      <div className="space-y-2 text-sm">
-                        <div className="flex justify-between">
+                    <div className="bg-gray-50 dark:bg-gray-700 p-3 sm:p-4 rounded-lg">
+                      <h3 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white mb-2">Wallet Information</h3>
+                      <div className="space-y-2 text-xs sm:text-sm">
+                        <div className="flex flex-col sm:flex-row sm:justify-between">
                           <span className="text-gray-600 dark:text-gray-300">Network:</span>
                           <span className="text-gray-900 dark:text-white">Ethereum Mainnet</span>
                         </div>
-                        <div className="flex justify-between">
+                        <div className="flex flex-col sm:flex-row sm:justify-between">
                           <span className="text-gray-600 dark:text-gray-300">Connected:</span>
                           <span className="text-green-600 dark:text-green-400">Active</span>
                         </div>
-                        <div className="flex justify-between">
+                        <div className="flex flex-col sm:flex-row sm:justify-between">
                           <span className="text-gray-600 dark:text-gray-300">Last Activity:</span>
                           <span className="text-gray-900 dark:text-white">2 minutes ago</span>
                         </div>
                       </div>
                     </div>
 
-                    <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                    <button className="w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition-colors">
                       Disconnect Wallet
                     </button>
                   </div>

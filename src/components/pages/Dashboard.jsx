@@ -55,29 +55,29 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Mining Control */}
           <motion.div
-            className="lg:col-span-2 bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm"
+            className="lg:col-span-2 bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">Mining Control</h2>
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6">Mining Control</h2>
             
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 space-y-3 sm:space-y-0">
               <div>
-                <div className="text-sm text-gray-600 dark:text-gray-300 mb-1">Current Pool</div>
-                <div className="text-lg font-semibold text-gray-900 dark:text-white">{miningPool} Pool</div>
+                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-1">Current Pool</div>
+                <div className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">{miningPool} Pool</div>
               </div>
-              <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+              <div className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium self-start sm:self-auto ${
                 isMining ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400' : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
               }`}>
                 {isMining ? 'Mining Active' : 'Mining Stopped'}
               </div>
             </div>
 
-            <div className="flex items-center space-x-4 mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4 sm:mb-6">
               <motion.button
                 onClick={() => setIsMining(!isMining)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-semibold transition-colors ${
+                className={`flex items-center justify-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition-colors ${
                   isMining 
                     ? 'bg-red-500 hover:bg-red-600 text-white' 
                     : 'bg-[#D4AF37] hover:bg-[#B8941F] text-white'
@@ -85,14 +85,14 @@ export default function Dashboard() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {isMining ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+                {isMining ? <Pause className="w-4 h-4 sm:w-5 sm:h-5" /> : <Play className="w-4 h-4 sm:w-5 sm:h-5" />}
                 <span>{isMining ? 'Stop Mining' : 'Start Mining'}</span>
               </motion.button>
               
               <select 
                 value={miningPool}
                 onChange={(e) => setMiningPool(e.target.value)}
-                className="px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
+                className="px-3 sm:px-4 py-2 sm:py-3 border border-gray-200 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm sm:text-base focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent"
               >
                 <option>Starter Pool</option>
                 <option>Professional Pool</option>
@@ -101,8 +101,8 @@ export default function Dashboard() {
             </div>
 
             {/* Mining Progress */}
-            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-              <div className="flex justify-between text-sm mb-2">
+            <div className="bg-gray-50 dark:bg-gray-700 p-3 sm:p-4 rounded-lg">
+              <div className="flex justify-between text-xs sm:text-sm mb-2">
                 <span className="text-gray-600 dark:text-gray-300">Mining Progress</span>
                 <span className="font-medium text-gray-900 dark:text-white">67%</span>
               </div>

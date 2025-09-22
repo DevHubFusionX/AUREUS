@@ -87,20 +87,20 @@ export default function Analytics() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main Chart */}
           <motion.div
-            className="lg:col-span-2 bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm"
+            className="lg:col-span-2 bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Mining Performance</h2>
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 sm:mb-6 space-y-3 sm:space-y-0">
+              <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">Mining Performance</h2>
               
-              <div className="flex space-x-2">
+              <div className="flex space-x-1 sm:space-x-2 overflow-x-auto">
                 {['earnings', 'hashrate', 'efficiency'].map((chart) => (
                   <button
                     key={chart}
                     onClick={() => setActiveChart(chart)}
-                    className={`px-3 py-1 rounded-lg text-sm font-medium capitalize transition-colors ${
+                    className={`px-2 sm:px-3 py-1 rounded-lg text-xs sm:text-sm font-medium capitalize transition-colors whitespace-nowrap ${
                       activeChart === chart
                         ? 'bg-[#D4AF37] text-white'
                         : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
@@ -113,7 +113,7 @@ export default function Analytics() {
             </div>
 
             {/* Simple Bar Chart */}
-            <div className="h-64 flex items-end justify-between space-x-2">
+            <div className="h-48 sm:h-64 flex items-end justify-between space-x-1 sm:space-x-2">
               {data.earnings.map((item, index) => (
                 <motion.div
                   key={item.day}
@@ -128,10 +128,10 @@ export default function Analytics() {
                     style={{ height: '100%' }}
                     whileHover={{ backgroundColor: '#B8941F' }}
                   />
-                  <div className="absolute -bottom-6 text-xs text-gray-600 dark:text-gray-300 font-medium">
+                  <div className="absolute -bottom-5 sm:-bottom-6 text-xs text-gray-600 dark:text-gray-300 font-medium">
                     {item.day}
                   </div>
-                  <div className="absolute -top-8 text-xs text-gray-900 dark:text-white font-semibold bg-white dark:bg-gray-700 px-2 py-1 rounded shadow-sm">
+                  <div className="absolute -top-6 sm:-top-8 text-xs text-gray-900 dark:text-white font-semibold bg-white dark:bg-gray-700 px-1 sm:px-2 py-1 rounded shadow-sm">
                     {item.amount}
                   </div>
                 </motion.div>
@@ -141,23 +141,23 @@ export default function Analytics() {
 
           {/* Side Stats */}
           <motion.div
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             {/* Pool Performance */}
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Pool Performance</h3>
+            <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Pool Performance</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {[
                   { pool: 'Professional', percentage: 65, earnings: '847.3' },
                   { pool: 'Starter', percentage: 25, earnings: '200.1' },
                   { pool: 'Institutional', percentage: 10, earnings: '200.5' }
                 ].map((pool, index) => (
                   <div key={pool.pool}>
-                    <div className="flex justify-between text-sm mb-2">
+                    <div className="flex justify-between text-xs sm:text-sm mb-2">
                       <span className="text-gray-600 dark:text-gray-300">{pool.pool} Pool</span>
                       <span className="font-medium text-gray-900 dark:text-white">{pool.earnings} AUREUS</span>
                     </div>
@@ -175,17 +175,17 @@ export default function Analytics() {
             </div>
 
             {/* Market Info */}
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Market Info</h3>
+            <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Market Info</h3>
               
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-gray-600 dark:text-gray-300">AUREUS Price</span>
-                  <span className="font-semibold text-gray-900 dark:text-white">$2.00</span>
+                  <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">AUREUS Price</span>
+                  <span className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white">$2.00</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600 dark:text-gray-300">24h Change</span>
-                  <span className="font-semibold text-green-600 dark:text-green-400">+5.2%</span>
+                  <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">24h Change</span>
+                  <span className="text-xs sm:text-sm font-semibold text-green-600 dark:text-green-400">+5.2%</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600 dark:text-gray-300">Network Hash</span>
